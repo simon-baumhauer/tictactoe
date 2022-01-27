@@ -5,6 +5,12 @@ tr {
 td {
     width: 133px;
     height: 133px;
+    position: relative;
+    cursor: pointer;
+}
+
+td:hover {
+    background-color: rgb(30, 241, 0, 0.5);
 }
 
 table {
@@ -29,4 +35,18 @@ table tr:last-child td {
 
 table tr td:last-child {
     border-right: 0;
+}
+
+.shape {
+    position: absolute;
+    top: 26px;
+    left: 17px;
+    right: 0;
+    bottom: 0;
+    width: 80px;
+    height: 80px;
+}
+
+.d-none {
+    display: none;
 }

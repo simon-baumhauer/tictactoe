@@ -3,15 +3,21 @@ let fields = [];
 let currentshape = 'cross';
 
 function fillShape(id) {
-    if (currentshape == 'cross') {
-        currentshape = 'star';
-    } else {
-        currentshape = 'cross';
+    if (!fields[id]) {
+        if (currentshape == 'cross') {
+            currentshape = 'star';
+            document.getElementById('player-1').classList.add('player-inactive');
+            document.getElementById('player-2').classList.remove('player-inactive');
+        } else {
+            currentshape = 'cross';
+            document.getElementById('player-1').classList.remove('player-inactive');
+            document.getElementById('player-2').classList.add('player-inactive');
+        }
+        fields[id] = currentshape
+        console.log(fields);
+        draw();
+        checkForWin();
     }
-    fields[id] = currentshape
-    console.log(fields);
-    draw();
-    checkForWin();
 }
 
 function draw() {

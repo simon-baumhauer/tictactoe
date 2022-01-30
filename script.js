@@ -32,6 +32,20 @@ function draw() {
     }
 }
 
+function restart() {
+    gameOver = false;
+    fields = [];
+    document.getElementById('game-over').classList.add('d-none');
+    document.getElementById('restart-btn').classList.add('d-none');
+    for (let i = 1; i < 8; i++) {
+        document.getElementById('line-' + i).classList.add('d-none');
+    }
+    for (let i = 0; i < 9; i++) {
+        document.getElementById('star-' + i).classList.add('d-none');
+        document.getElementById('cross-' + i).classList.add('d-none');
+    }
+}
+
 function checkForWin() {
     let winner;
 
@@ -72,6 +86,7 @@ function checkForWin() {
         gameOver = true;
         setTimeout(function() {
             document.getElementById('game-over').classList.remove('d-none');
+            document.getElementById('restart-btn').classList.remove('d-none');
         }, 1000);
 
     }
